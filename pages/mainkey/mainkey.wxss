@@ -1,0 +1,18 @@
+@import "../common/lib/weui.wxss";
+
+
+.btn-box{
+  margin-top: 0rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 30rpx;
+}
+
+.text-box{
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 30rpx;
+  color: #FF0000;
+}
+

@@ -1,0 +1,30 @@
+<view class="container">
+
+  <!--<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> a </switch>
+<button bindtap="addNumberToFront"> Add to the front </button>-->
+  <view >
+    <view class="kind-list-item">
+      <view id="1" class="kind-list-item-hd">
+        <view class="kind-list-text">同步密码库</view>
+      </view>
+    </view>
+    <view class="weui-cell ">
+      <view class="kind-list-text">同步密码库</view>
+    </view>
+    <view class="weui-cell">
+
+      <!--<view id="1" class="kind-list-item-hd">-->
+     同步密码库
+
+      <!--</view>-->
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="password" maxlength="10" placeholder="ASDFASDF" />
+      </view>
+    </view>
+  </view>
+  <button bindtap="switch"> Switch </button>
+</view>
