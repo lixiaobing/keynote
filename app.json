@@ -2,7 +2,6 @@
   "pages": [
 
     "pages/index/index",
-    "pages/logs/logs",
     "pages/addkey/addkey",
     "pages/setting/setting",
     "pages/mainkey/mainkey"
