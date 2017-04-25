@@ -53,36 +53,27 @@ function loadData() {
 function saveData() {
     var keyNoteName = getKeyNoteName();
     //没有历史记录
-     if (util.isNone(keyNoteName)) {
+    if (util.isNone(keyNoteName)) {
         console.log("keyNoteName is null");
         return;
     }
     //save
-    wx.setStorageSync(keyNoteName,keyNoteData);
+    wx.setStorageSync(keyNoteName, keyNoteData);
 }
 
 
 function getPassWord() {
-    console.log("get password="+keyNoteData.password);
+    console.log("get password=" + keyNoteData.password);
     return keyNoteData.password;
 }
 function setPassWord(password) {
-    console.log("set password="+password);
+    console.log("set password=" + password);
     keyNoteData.password = password;
     saveData();
 }
 
 function getItems(password) {
     return keyNoteData.items;
-}
-
-
-
-function encry(note){
-    return note
-}
-function decrypt(note){
-    return note
 }
 
 
@@ -93,17 +84,48 @@ function addNote(note) {
 }
 //删除一条
 function removeNote(id) {
-
+    var item
+    var items = keyNoteData.items;
+    for (var index = 0; index < item.length; index++) {
+        item = items[index]
+        if (item.id == id) {
+            items.splice(index, 1);
+            break;
+        }
+    }
+    saveData();
 }
 //修改
-function updateNote(note) {
-
+function updateNote(itemnote) {
+    var items = keyNoteData.items
+    for (var index = 0; index < item.length; index++) {
+        if (items[index].id == id) {
+            items[index] = item
+            break;
+        }
+    }
+    saveData();
 }
+
+
+function encryNote(item) {
+
+    return item
+}
+
+function decryptNote(item) {
+
+    return item
+}
+
+
+
+
 exports.setKeyNoteName = setKeyNoteName;
 exports.getKeyNoteName = getKeyNoteName;
 exports.setPassWord = setPassWord;
 exports.getPassWord = getPassWord;
-exports.getItems   = getItems;
+exports.getItems = getItems;
 exports.loadData = loadData;
 exports.addNote = addNote
 exports.removeNote = removeNote
