@@ -37,13 +37,13 @@ function formatLocation(longitude, latitude) {
 
 var date = new Date()
 
-function getTime(){
+function getTime() {
   return date.getTime()
-}  
+}
 
-function getTimeString(){
+function getTimeString() {
 
-  return ""+getTime()
+  return "" + getTime()
 }
 
 
@@ -51,7 +51,7 @@ function saveData(data) {
   var exsit = false;
   var dataList = wx.getStorageSync('datalist');
   if (dataList === null || dataList === "") {
-      console.log("dataList is null");
+    console.log("dataList is null");
     dataList = [];
   }
   console.log(dataList);
@@ -71,7 +71,7 @@ function saveData(data) {
 //读取数据
 function getData() {
   var dataList = wx.getStorageSync('datalist1')
-    console.log("getDatalist")
+  console.log("getDatalist")
   console.log(dataList)
   if (dataList === null || dataList === "") {
     dataList = []
@@ -82,7 +82,7 @@ function getData() {
 //获取主密码
 function getMainPass() {
   var dataList = wx.getStorageSync('datalist')
-    console.log("getDatalist")
+  console.log("getDatalist")
   console.log(dataList)
   if (dataList === null || dataList === "") {
     dataList = []
@@ -97,28 +97,47 @@ mainPassMd5:   //主密码
 }
 */
 
-function isNULL(value){
-  return value === null || value === undefined || value==='';
+function isNULL(value) {
+  return value === null || value === undefined || value === '';
 }
 
 
-function encrypt(word,key){
-  return AES.Ctr.encrypt(word,key,128);
+function encrypt(word, key) {
+  return AES.Ctr.encrypt(word, key, 128);
 }
-function decrypt(word,key){
-  return AES.Ctr.decrypt(word,key,128);
+function decrypt(word, key) {
+  return AES.Ctr.decrypt(word, key, 128);
 }
 
 
 module.exports = {
   formatTime: formatTime,
   formatLocation: formatLocation,
-  getTime:getTime,
-  getTimeString:getTimeString,
+  getTime: getTime,
+  getTimeString: getTimeString,
   saveData: saveData,
   getData: getData,
   isNone: isNULL,
-  md5:MD5.md5,
-  encrypt:encrypt,
-  decrypt:decrypt
+  md5: MD5.md5,
+  encrypt: encrypt,
+  decrypt: decrypt
 }
+
+
+// function formatTime(date) {
+//   var year = date.getFullYear()
+//   var month = date.getMonth() + 1
+//   var day = date.getDate()
+
+//   var hour = date.getHours()
+//   var minute = date.getMinutes()
+//   var second = date.getSeconds()
+
+
+//   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+// }
+
+// function formatNumber(n) {
+//   n = n.toString()
+//   return n[1] ? n : '0' + n
+// }
