@@ -2,12 +2,12 @@
 <!--index.wxml-->
 <view class="container">
   <view class="btn-box" id="buttonContainer">
-    <button type="primary" data-hi="addkey" bindtap="eventAddKey">新建</button>
+    <button type="primary"  bindtap="eventAddKey">新建</button>
   </view>
   <view class="kind-list">
     <block wx:for-items="{{list}}" wx:key="{{item.id}}">
       <view class="kind-list-item">
-        <view id="{{item.id}}" class="kind-list-item-hd">
+        <view id="{{item.id}}" class="kind-list-item-hd" bindtap="onclick" data-hi="{{item.id}}" >
           <view class="kind-list-text">{{item.title}}</view>
           <view class="kind-list-text">{{item.account}}</view>
           <image class="kind-list-img" src="../../image/location.png"></image>

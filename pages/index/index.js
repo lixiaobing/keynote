@@ -57,6 +57,13 @@ Page({
     motto: 'Hello World',
     list: []
   },
+  onclick:function(event){
+    var id = event.currentTarget.id;
+      console.log(id);
+        wx.navigateTo({
+          url: '../noteinfo/noteinfo?id='+id
+        })
+  },
   eventAddKey: function () {
 
 
@@ -75,13 +82,6 @@ Page({
       }
     }
 
-  },
-
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   reLoad: function () {
     self.setData({ list: user.getItems() })

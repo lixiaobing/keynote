@@ -4,6 +4,6 @@
 var host = "www.leebing.cn"
 var config = {
     host,
-    authURL: `https://${host}/auth.php`,
+    authURL: `https://${host}/keynote/auth.php`,
 };
 module.exports = config

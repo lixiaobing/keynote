@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/addkey/addkey",
     "pages/setting/setting",
-    "pages/mainkey/mainkey"
+    "pages/mainkey/mainkey",
+        "pages/noteinfo/noteinfo"
   ],
   "window": {
     "navigationBarTextStyle": "white",

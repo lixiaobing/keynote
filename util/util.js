@@ -70,7 +70,7 @@ function saveData(data) {
 
 //读取数据
 function getData() {
-  var dataList = wx.getStorageSync('datalist1')
+  var dataList = wx.getStorageSync('datalist')
   console.log("getDatalist")
   console.log(dataList)
   if (dataList === null || dataList === "") {
@@ -109,6 +109,12 @@ function decrypt(word, key) {
   return AES.Ctr.decrypt(word, key, 128);
 }
 
+function clean(){
+  console.log("clean data!")
+    wx.setStorageSync('datalist', []);
+    var data=    wx.getStorageSync('datalist');  
+        console.log(data);
+}
 
 module.exports = {
   formatTime: formatTime,
@@ -120,7 +126,9 @@ module.exports = {
   isNone: isNULL,
   md5: MD5.md5,
   encrypt: encrypt,
-  decrypt: decrypt
+  decrypt: decrypt,
+
+  clean: clean
 }
 
 

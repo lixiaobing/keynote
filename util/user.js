@@ -12,6 +12,7 @@ var keyNoteData = {
 function clean() {
     keyNoteData.password = null;
     keyNoteData.items = [];
+    saveData();
 }
 
 //获取名称
@@ -86,7 +87,7 @@ function addNote(note) {
 function removeNote(id) {
     var item
     var items = keyNoteData.items;
-    for (var index = 0; index < item.length; index++) {
+    for (var index = 0; index < items.length; index++) {
         item = items[index]
         if (item.id == id) {
             items.splice(index, 1);
@@ -98,7 +99,7 @@ function removeNote(id) {
 //修改
 function updateNote(itemnote) {
     var items = keyNoteData.items
-    for (var index = 0; index < item.length; index++) {
+    for (var index = 0; index < items.length; index++) {
         if (items[index].id == id) {
             items[index] = item
             break;
@@ -118,7 +119,18 @@ function decryptNote(item) {
     return item
 }
 
-
+function getNote(id){
+    var item;
+    var items = keyNoteData.items;
+    for (var index = 0; index < items.length; index++) {
+        item = items[index]
+        if (item.id == id) {
+    
+            return item;
+        }
+    }
+    return null;
+}
 
 
 exports.setKeyNoteName = setKeyNoteName;
@@ -131,6 +143,6 @@ exports.addNote = addNote
 exports.removeNote = removeNote
 exports.updateNote = updateNote
 
-
+exports.getNote = getNote
 
 //本地的所有keynotename 要做记录，不然多账户切换，并且数据没有同步到远程的话可能会导致出数据丢失
