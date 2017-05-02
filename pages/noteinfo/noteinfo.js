@@ -1,37 +1,24 @@
 var util = require("../../util/util.js")
-
 var app = getApp()
 var user = app.getUser()
 
 Page({
   data: {
-    focus: false,
-    inputValue: '',
-    modalHidden: true,
   },
-  onLoad:function(value){
-    console.log("id:"+value.id);
-
-     var item = user.getNote(value.id)
+  onLoad: function (value) {
+    console.log("id:" + value.id);
+    var item = user.getNote(value.id)
     console.log(item);
-    this.setData({item:item});
+    this.setData({ item: item, id: id });
   },
+
   formBindsubmit: function (e) {
-      wx.navigateBack();
+    wx.navigateBack();
   },
-  modalBindaconfirm: function (e) {
-    this.setData({
-      modalHidden: true
+  onClickEdit: function (e) {
+    wx.navigateTo({
+      url: '../edit/edit?id=' + this.data.id
     })
   }
+
 })
-
-
-
-// {
-//   id:
-//   title:
-//   account:
-//   password:
-//   note:
-// }

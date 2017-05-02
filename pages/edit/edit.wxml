@@ -7,7 +7,7 @@
       <view class="weui-cells__title">名称</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="title" auto-focus placeholder="" />
+          <input class="weui-input" name="title" auto-focus value={{item.title}} placeholder="" />
         </view>
       </view>
     </view>
@@ -15,7 +15,7 @@
       <view class="weui-cells__title">用户名</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="account" maxlength="40" placeholder="" />
+          <input class="weui-input" name="account" maxlength="40" value={{item.account}} placeholder="" />
         </view>
       </view>
     </view>
@@ -23,7 +23,7 @@
       <view class="weui-cells__title">密码</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="password" maxlength="10"  placeholder="" />
+          <input class="weui-input" name="password" maxlength="10" value={{item.password}} placeholder="" />
         </view>
       </view>
     </view>
@@ -31,7 +31,7 @@
       <view class="weui-cells__title">笔记</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="note"  placeholder="" />
+          <input class="weui-input" name="note" value={{item.note}} placeholder="" />
         </view>
       </view>
     </view>

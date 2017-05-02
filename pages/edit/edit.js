@@ -8,6 +8,14 @@ Page({
     inputValue: '',
     modalHidden: true,
   },
+  onLoad: function (value) {
+    console.log("id:" + value.id);
+    var item = user.getNote(value.id)
+    console.log(item);
+    this.setData({ item: item, id: id });
+  },
+
+
   formBindsubmit: function (e) {
     console.log(e.detail.value.title);
     console.log(e.detail.value.account);
