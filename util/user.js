@@ -97,11 +97,11 @@ function removeNote(id) {
     saveData();
 }
 //修改
-function updateNote(itemnote) {
+function updateNote(note) {
     var items = keyNoteData.items
     for (var index = 0; index < items.length; index++) {
-        if (items[index].id == id) {
-            items[index] = item
+        if (items[index].id == note.id) {
+            items[index] = note
             break;
         }
     }

@@ -5,11 +5,11 @@ var self = null;
 var app = getApp()
 var user = app.getUser()
 
-function testAes(){
-    var text = util.encrypt("wo shi yi ge dachuiaaaaaa ", "1111111111");
-    console.log('text=' + text);
-    text = util.decrypt(text, "1111111111");
-    console.log('text=' + text);
+function testAes() {
+  var text = util.encrypt("wo shi yi ge dachuiaaaaaa ", "1111111111");
+  console.log('text=' + text);
+  text = util.decrypt(text, "1111111111");
+  console.log('text=' + text);
 }
 
 //授权登陆
@@ -19,6 +19,7 @@ function auth() {
     success: function (res) {
       console.log(res)
       if (res.code) {
+         console.log("发起网络请求");
         //发起网络请求
         wx.request({
           url: config.authURL,
@@ -57,16 +58,17 @@ Page({
     motto: 'Hello World',
     list: []
   },
-  onclick:function(event){
+  onclick: function (event) {
+    console.log("....................")
     var id = event.currentTarget.id;
-      console.log(id);
-        wx.navigateTo({
-          url: '../noteinfo/noteinfo?id='+id
-        })
+    console.log(id);
+    wx.navigateTo({
+      url: '../noteinfo/noteinfo?id=' + id
+    })
   },
   eventAddKey: function () {
 
-
+    console.log(".........eventAddKey..........."+user.getKeyNoteName())
     //是否已经登陆
     if (!util.isNone(user.getKeyNoteName())) {
       //是否设置主密码
@@ -80,6 +82,8 @@ Page({
           url: '../addkey/addkey'
         })
       }
+    }else{
+       console.log(".........eventAddKey.xxx..........")
     }
 
   },
@@ -93,7 +97,7 @@ Page({
     //载入历史数据
     user.loadData()
     self.setData({ list: user.getItems() })
-    
+
     wx.getNetworkType({
       success: function (res) {
         if (res.networkType === 'none') {

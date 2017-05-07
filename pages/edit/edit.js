@@ -12,7 +12,7 @@ Page({
     console.log("id:" + value.id);
     var item = user.getNote(value.id)
     console.log(item);
-    this.setData({ item: item, id: id });
+    this.setData({ item: item, id: value.id });
   },
 
 
@@ -33,15 +33,13 @@ Page({
       });
 
     } else {
-      var note =
-        {
-          id: util.getTime(),
-          title: e.detail.value.title,
-          account: e.detail.value.account,
-          password: e.detail.value.password,
-          note: e.detail.value.note
-        };
-      user.addNote(note)
+
+      
+      this.data.item.title   = e.detail.value.title,
+      this.data.item.account = e.detail.value.account,
+      this.data.item.password= e.detail.value.password,
+      this.data.item.note    = e.detail.value.note
+      user.updateNote(this.data.item)
 
       var pages = getCurrentPages()
       console.log(pages)

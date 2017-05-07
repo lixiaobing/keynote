@@ -9,16 +9,28 @@ Page({
     console.log("id:" + value.id);
     var item = user.getNote(value.id)
     console.log(item);
-    this.setData({ item: item, id: id });
+    this.setData({ item: item, id: value.id });
   },
 
-  formBindsubmit: function (e) {
-    wx.navigateBack();
-  },
   onClickEdit: function (e) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../edit/edit?id=' + this.data.id
     })
+
+
+  },
+  onClickRemove: function (e) {
+    user.removeNote(this.data.id);
+
+    var pages = getCurrentPages()
+    // console.log(pages);
+    if (pages.length > 0) {
+      if (pages[0].reLoad) {
+        pages[0].reLoad()
+      }
+    }
+
+    wx.navigateBack()
   }
 
 })

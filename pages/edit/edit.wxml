@@ -1,46 +1,46 @@
-<!--对话框-->
 
+<!--对话框-->
 <view class="container">
-<form bindsubmit="formBindsubmit">
-  <view class="page-body">
-    <view class="page-section">
-      <view class="weui-cells__title">名称</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="title" auto-focus value={{item.title}} placeholder="" />
+  <form bindsubmit="formBindsubmit">
+    <view class="page-body">
+      <view class="page-section">
+        <view class="weui-cells__title">名称</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" name="title" auto-focus value="{{item.title}}"  placeholder=""/>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="page-section">
-      <view class="weui-cells__title">用户名</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="account" maxlength="40" value={{item.account}} placeholder="" />
+      <view class="page-section">
+        <view class="weui-cells__title">用户名</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" name="account" maxlength="40"  placeholder="" value="{{item.account}}" />
+          </view>
         </view>
       </view>
-    </view>
-    <view class="page-section">
-      <view class="weui-cells__title">密码</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="password" maxlength="10" value={{item.password}} placeholder="" />
+      <view class="page-section">
+        <view class="weui-cells__title">密码</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" name="password" maxlength="10" value='{{item.password}}' placeholder="" />
+          </view>
         </view>
       </view>
-    </view>
-    <view class="page-section">
-      <view class="weui-cells__title">笔记</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <input class="weui-input" name="note" value={{item.note}} placeholder="" />
+      <view class="page-section">
+        <view class="weui-cells__title">笔记</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" name="note" value="{{item.note}}" placeholder="" />
+          </view>
         </view>
       </view>
+      <view class="btn-area" id="buttonContainer">
+        <button type="primary" data-hi="" formType="submit">确定</button>
+      </view>
     </view>
-    <view class="btn-area" id="buttonContainer">
-      <button type="primary" data-hi=""  formType="submit">确定</button>
-    </view>
-  </view>
   </form>
 </view>
 <view>
-<modal title="警告" hidden="{{modalHidden}}" confirm-text="确定"  cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindaconfirm" >名称和账户不能为空</modal>
+  <modal title="警告" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindaconfirm">名称和账户不能为空</modal>
 </view>

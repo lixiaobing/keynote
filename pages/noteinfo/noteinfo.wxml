@@ -37,11 +37,11 @@
           </view>
         </view>
         <view class="btn-area" id="buttonContainer">
-          <button type="primary" data-hi="" formType="submit">修改</button>
+          <button type="primary" data-hi="" bindtap="onClickEdit">修改</button>
+          <button type="primary" bindtap="onClickRemove">删除</button>
         </view>
       </view>
   </form>
   </view>
   <view>
-    <modal title="警告" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindaconfirm">名称和账户不能为空</modal>
   </view>

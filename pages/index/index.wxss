@@ -3,6 +3,12 @@
 @import "../common/index.wxss";
 
 
+.btn-areas{
+  margin-top: 0rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20rpx;
+}
  
 
 
